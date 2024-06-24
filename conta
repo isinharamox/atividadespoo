@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Objects;
 
-public abstract class Conta {
+public abstract class Conta implements ITaxas {
 
     private int numero;
 
@@ -27,6 +27,22 @@ public abstract class Conta {
         this.proximaOperacao = 0;
 
         Conta.totalContas++;
+    }
+
+    public void imprimirextratotaxas {
+        double x = 0;
+
+        System.out.println ("--- Extrato de Taxas ---");
+        System.out.println ("Manutenção da conta:" + CalcularTaxas());
+
+        Operacao[] op = getTotalOperacoes();
+        for (int i = 0; i < op.length; i++) {
+            if (op[i] != null && op[i].getTipo() == 's') {
+                System.out.println ("Total Saque: R$" + op.CalcularTaxas());
+                x +=op[i].CalcularTaxas();
+            }
+        }
+        System.out.println ("Taxa total do saque: R$" + x);
     }
 
     public boolean sacar(double valor) {
@@ -64,7 +80,6 @@ public abstract class Conta {
                 "saldo=" + saldo + '\n' +
                 "limite=" + limite;
     }
-
     public boolean equals(Object o) {
         if (this == o)
             return true;
@@ -74,7 +89,6 @@ public abstract class Conta {
         }
         return false;
     }
-
     public void imprimirExtrato() {
         System.out.println("======= Extrato Conta " + this.numero + "======");
         for(Operacao atual : this.operacoes) {
@@ -84,7 +98,6 @@ public abstract class Conta {
         }
         System.out.println("====================");
     }
-
     public abstract void getLimite();
 
     public int getNumero() {
