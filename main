@@ -17,5 +17,7 @@ public class Main {
 
         int media = Operacao.getTotalOperacoes() / Conta.getTotalContas();
         System.out.println("Média de operações por conta aberta: " + media);
+
+        public void imprimirextratotaxas ();
     }
 }
