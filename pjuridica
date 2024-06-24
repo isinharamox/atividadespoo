@@ -1,7 +1,8 @@
+
 import java.util.Date;
 import java.util.Objects;
 
-public class PessoaJuridica extends Cliente {
+public class PessoaJuridica extends Cliente implements ITaxas{
 
     private String cnpj;
 
@@ -16,8 +17,9 @@ public class PessoaJuridica extends Cliente {
         this.setor = setor;
     }
 
-
-    @Override
+    public double CalcularTaxas {
+        return 20;
+    }
     public String toString() {
         return  "cnpj=" + cnpj + '\n' +
                 "numFuncionarios=" + numFuncionarios + '\n'  +
