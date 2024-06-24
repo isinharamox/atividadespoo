@@ -1,7 +1,8 @@
+
 import java.util.Date;
 import java.util.Objects;
 
-public class PessoaFisica extends Cliente {
+public class PessoaFisica extends Cliente implements ITaxas{
 
     private String cpf;
 
@@ -16,6 +17,9 @@ public class PessoaFisica extends Cliente {
         this.genero = genero;
     }
 
+    public double CalcularTaxas {
+        return 10;
+    }
     public String toString() {
         return "cpf=" + cpf + '\n' +
                 "idade=" + idade + '\n' +
