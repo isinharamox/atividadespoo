@@ -1,7 +1,8 @@
 
+
 import java.util.Date;
 
-public abstract class Operacao {
+public abstract class Operacao implements ITaxas{
 
     /* Data de realização da operação */
     private Date data;
